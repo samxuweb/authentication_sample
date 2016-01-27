@@ -1,0 +1,37 @@
+<div class="modal fade" id="SignupModal" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+            <form action="/users" method="post" class= "form-horizontal">
+              <%#= devise_error_messages! %>
+              <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+              <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" name="user[email]" id="email" class="form-control" placeholder = "Email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" name="user[password]" id="password" class="form-control" placeholder = "Password" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">Password confirmation</label>
+                <div class="col-sm-10">
+                  <input type="password" name="user[password_confirmation]" id="password_confirmation" class="form-control" placeholder = "Password" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <input type="submit" name="commit" value="Sign in", class="btn btn-default" />
+                </div>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
